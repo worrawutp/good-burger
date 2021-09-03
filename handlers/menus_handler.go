@@ -36,7 +36,20 @@ func ListMenusHandler(w http.ResponseWriter, r *http.Request) {
 	menuTemplate.Execute(w, menus)
 }
 
-func MenusHandler(w http.ResponseWriter, r *http.Request) {
+func CreateMenusHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("request payload:")
+	fmt.Printf("%v\n", r.Method)
+
+	// Extract formData
+
+	// Validate and sanitizer
+
+	// Insert value for each field into database
+
+	// Reder/Redirect to target page
+}
+
+func MenuHandler(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, _ := strconv.ParseInt(params["id"], 0, 64)
 

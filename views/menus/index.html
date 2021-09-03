@@ -6,6 +6,29 @@
 </head>
 <body>
   <h1>All menus</h1>
+
+  <div>
+    <form action="/menus" method="post">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" />
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="10" cols="30">
+        </textarea>
+      </div>
+      <div class="field">
+        <label for="price">Price</label>
+        <input id="price" type="number" name="price" />
+      </div>
+
+      <div class="field">
+        <input type="submit" />
+      </div>
+    </form>
+  </div>
+
   <ul>
     {{ range . }}
     <li><a href="/menus/{{ .Id }}">{{ .Name }}</a></li>

@@ -28,8 +28,9 @@ func main() {
 		fmt.Fprintf(w, "Hello Go")
 	})
 	router.HandleFunc("/about", AboutHandler)
-	router.HandleFunc("/menus", ListMenusHandler)
-	router.HandleFunc("/menus/{id:[0-9]+}", MenusHandler)
+	router.HandleFunc("/menus", ListMenusHandler).Methods("GET")
+	router.HandleFunc("/menus", CreateMenusHandler).Methods("POST")
+	router.HandleFunc("/menus/{id:[0-9]+}", MenuHandler)
 	router.NotFoundHandler = http.HandlerFunc(NotFound)
 
 	http.Handle("/", router)
